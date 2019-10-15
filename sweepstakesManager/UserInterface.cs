@@ -8,23 +8,27 @@ namespace sweepstakesManager
 {
     class UserInterface
     {
-        public void MainMenu()
+        public static void MainMenu()
         {
-            string select;
             Console.WriteLine("Sweepstakes Manager\n" +
-                "Press 1 to Input Contestants\n" +
-                "Press 2 to Select a Winner");
-            select = Console.ReadLine();
+                "Press 1 to Create New Sweepstakes\n" +
+                "Press 2 to Add contestants to Sweepstakes\n" +
+                "Press 3 to Select winner");
+            string select = Console.ReadLine();
             switch (select)
             {
                 case "1":
-                    // TODO: Input Contestant Process
+                    // TODO: create new sweepstakes
                     break;
                 case "2":
-                    // TODO: build out selection process
+                    // TODO: find sweepstakes for marketing firm
+                    break;
+                case "3":
+                    // TODO: select winner
                     break;
                 default:
                     Console.WriteLine("Not valid input.  Please try again.");
+                    Console.Clear();
                     MainMenu();
                     break;
             }

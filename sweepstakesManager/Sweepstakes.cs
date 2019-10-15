@@ -9,6 +9,7 @@ namespace sweepstakesManager
     class Sweepstakes
     {
         string name;
+        string prize;
         Dictionary<Contestant, int> contestants = new Dictionary<Contestant, int>();
 
         public Sweepstakes(string name)
@@ -23,7 +24,8 @@ namespace sweepstakesManager
 
         Contestant PickWinner()
         {
-            //TODO: build functionality to pick the winner
+            int winner = RandomNumber.GetRandomNumber(1, contestants.Count);
+            //TO DO: find winner;
         }
         void PrintContestantInfo(Contestant contestant)
         {

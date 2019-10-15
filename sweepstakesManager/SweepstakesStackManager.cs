@@ -8,6 +8,8 @@ namespace sweepstakesManager
 {
     class SweepstakesStackManager : ISweepstakesManager
     {
+        Stack<Sweepstakes> stack = new Stack<Sweepstakes>();
+
         public Sweepstakes GetSweepstakes()
         {
             throw new NotImplementedException();

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace sweepstakesManager
 {
-    class MarketingFirm
+    class RandomNumber
     {
-        Dictionary<Sweepstakes, string> sweepstakes = new Dictionary<Sweepstakes, string>();
-        void CreateNewSweepstakes()
+        public static int GetRandomNumber(int min, int max)
         {
-
+            Random random = new Random();
+            return random.Next(min, max + 1);
         }
     }
 }
