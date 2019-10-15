@@ -8,10 +8,57 @@ namespace sweepstakesManager
 {
     class MarketingFirm
     {
-        Dictionary<Sweepstakes, string> sweepstakes = new Dictionary<Sweepstakes, string>();
-        void CreateNewSweepstakes()
+        bool stack;
+
+        public MarketingFirm()
         {
 
+        }
+        void CreateNewSweepstakes()
+        {
+            UserInterface.AskForSweepstakesName();
+            Sweepstakes sweepstakes = new Sweepstakes(UserInterface.input);
+        }
+
+        void CreateNewSweepStakesManager()
+        {
+            if (stack)
+            {
+                SweepstakesStackManager sweepstakesManager = new SweepstakesStackManager();
+            }
+            else
+            {
+                SweepstakesQueueManager sweepstakesManager = new SweepstakesQueueManager();
+            }
+        }
+
+        public void AddToStackOrQueue()
+        {
+            if (UserInterface.firstTime)
+            {
+                UserInterface.AskStackOrQueue();
+                switch (UserInterface.input)
+                {
+                    case "1":
+                        stack = true;
+                        CreateNewSweepStakesManager();
+                        CreateNewSweepstakes();
+                        break;
+                    case "2":
+                        CreateNewSweepStakesManager();
+                        CreateNewSweepstakes();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        Console.Clear();
+                        AddToStackOrQueue();
+                        break;
+                }
+            }
+            else
+            {
+                CreateNewSweepstakes();
+            }
         }
     }
 }

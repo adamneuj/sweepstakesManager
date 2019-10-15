@@ -10,8 +10,8 @@ namespace sweepstakesManager
     {
         static void Main(string[] args)
         {
-            SweepstakesManager sweepstakesManager = new SweepstakesManager();
-            sweepstakesManager.RunManager();
+            MarketingFirm firm = new MarketingFirm();
+            UserInterface.MainMenu(firm);
         }
     }
 }

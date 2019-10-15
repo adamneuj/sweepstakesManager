@@ -10,7 +10,7 @@ namespace sweepstakesManager
     {
         string name;
         string prize;
-        Dictionary<Contestant, int> contestants = new Dictionary<Contestant, int>();
+        Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
 
         public Sweepstakes(string name)
         {
