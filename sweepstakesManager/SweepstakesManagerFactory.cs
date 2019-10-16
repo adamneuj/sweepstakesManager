@@ -18,7 +18,9 @@ namespace sweepstakesManager
                 case "2": // QUEUE
                     return new SweepstakesQueueManager();
                 default:
-                    throw new ApplicationException(string.Format("Not a valid input."));
+                    Console.WriteLine("Invalid input.  Please try again.");
+                    GetStackOrQueue(firm);
+                    throw new ApplicationException(string.Format("Invalid Input"));
             }
         }
     }

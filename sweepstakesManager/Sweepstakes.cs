@@ -38,10 +38,13 @@ namespace sweepstakesManager
         void PrintContestantInfo(Contestant contestant)
         {
             Console.Clear();
-            Console.WriteLine(this.name + "WINNER");
+            Console.WriteLine(this.name + " WINNER");
             Console.WriteLine("Registration Number: " + contestant.registrationNumber);
             Console.WriteLine("Name: " + contestant.firstName + " " + contestant.lastName);
             Console.WriteLine("Email: " + contestant.email);
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
         }
 
         public void Register()

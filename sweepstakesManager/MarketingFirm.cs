@@ -9,8 +9,9 @@ namespace sweepstakesManager
     public class MarketingFirm
     {
         public bool stack;
-        public ISweepstakesManager sweepstakesManager;
+        ISweepstakesManager sweepstakesManager;
         SweepstakesManagerFactory sweepstakesManagerFactory;
+        Sweepstakes currentSweepstakes;
 
         public MarketingFirm()
         {
@@ -44,6 +45,31 @@ namespace sweepstakesManager
             else
             {
                 CreateNewSweepstakes();
+            }
+        }
+        public void RegisterAndPickWinner()
+        {
+            currentSweepstakes = sweepstakesManager.GetSweepstakes();
+            AddContestants();
+            currentSweepstakes.ChooseAndPrintWinner();
+        }
+        void AddContestants()
+        {
+            currentSweepstakes.Register();
+            UserInterface.AskToRegisterMoreContestants();
+            UserInterface.input.ToLower();
+            switch (UserInterface.input)
+            {
+                case "yes":
+                    AddContestants();
+                    break;
+                case "no":
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input");
+                    Console.Clear();
+                    AddContestants();
+                    break;
             }
         }
     }

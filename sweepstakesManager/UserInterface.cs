@@ -14,8 +14,7 @@ namespace sweepstakesManager
         {
             Console.WriteLine("Sweepstakes Manager\n" +
                 "Press 1 to Create New Sweepstakes\n" +
-                "Press 2 to Add contestants to Sweepstakes\n" +
-                "Press 3 to Select winner");
+                "Press 2 to Add contestants to Sweepstakes and Select Winner");
             input = Console.ReadLine();
             switch (input)
             {
@@ -24,13 +23,22 @@ namespace sweepstakesManager
                     MainMenu(firm);
                     break;
                 case "2":
-                    // TODO: find sweepstakes for marketing firm
-                    break;
-                case "3":
-                    // TODO: select winner
+                    if(firstTime)
+                    {
+                        Console.WriteLine("No sweepstakes present.  Please create new sweepstakes.");
+                        Console.WriteLine("Press enter to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        MainMenu(firm);
+                    }
+                    else
+                    {
+                        firm.RegisterAndPickWinner();
+                        MainMenu(firm);
+                    }
                     break;
                 default:
-                    Console.WriteLine("Not valid input.  Please try again.");
+                    Console.WriteLine("Invalid input.  Please try again.");
                     Console.Clear();
                     MainMenu(firm);
                     break;
@@ -59,12 +67,17 @@ namespace sweepstakesManager
         }
         public static void GetLastName()
         {
-            Console.WriteLine("Last name: ");
+            Console.WriteLine("\nLast name: ");
             input = Console.ReadLine();
         }
         public static void GetEmail()
         {
-            Console.WriteLine("Email: ");
+            Console.WriteLine("\nEmail: ");
+            input = Console.ReadLine();
+        }
+        public static void AskToRegisterMoreContestants()
+        {
+            Console.WriteLine("\nDo you want to register another contestant?");
             input = Console.ReadLine();
         }
     }

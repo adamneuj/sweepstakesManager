@@ -9,7 +9,7 @@ namespace sweepstakesManager
     class SweepstakesStackManager : ISweepstakesManager
     {
         Stack<Sweepstakes> stack;
-        Sweepstakes currentSweepstakes;
+
         public SweepstakesStackManager()
         {
             stack = new Stack<Sweepstakes>();
@@ -17,7 +17,7 @@ namespace sweepstakesManager
 
         public Sweepstakes GetSweepstakes()
         {
-            currentSweepstakes = stack.Pop();
+            Sweepstakes currentSweepstakes = stack.Pop();
             return currentSweepstakes;
         }
         public void InsertSweepstakes(Sweepstakes sweepstakes)

@@ -9,7 +9,6 @@ namespace sweepstakesManager
     class SweepstakesQueueManager : ISweepstakesManager
     {
         Queue<Sweepstakes> queue;
-        Sweepstakes currentSweepstakes;
 
         public SweepstakesQueueManager()
         {
@@ -18,7 +17,7 @@ namespace sweepstakesManager
 
         public Sweepstakes GetSweepstakes()
         {
-            currentSweepstakes = queue.Dequeue();
+            Sweepstakes currentSweepstakes = queue.Dequeue();
             return currentSweepstakes;
         }
 
