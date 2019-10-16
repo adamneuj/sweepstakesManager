@@ -10,7 +10,6 @@ namespace sweepstakesManager
     {
         public ISweepstakesManager GetStackOrQueue(MarketingFirm firm)
         {
-            UserInterface.AskStackOrQueue();
             switch (UserInterface.input)
             {
                 case "1": // STACK
