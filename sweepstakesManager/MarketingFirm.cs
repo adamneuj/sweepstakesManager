@@ -9,6 +9,8 @@ namespace sweepstakesManager
     class MarketingFirm
     {
         bool stack;
+        SweepstakesStackManager sweepstakesStackManager;
+        SweepstakesQueueManager sweepstakesQueueManager;
 
         public MarketingFirm()
         {
@@ -18,17 +20,25 @@ namespace sweepstakesManager
         {
             UserInterface.AskForSweepstakesName();
             Sweepstakes sweepstakes = new Sweepstakes(UserInterface.input);
+            if (stack)
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         void CreateNewSweepStakesManager()
         {
             if (stack)
             {
-                SweepstakesStackManager sweepstakesManager = new SweepstakesStackManager();
+                sweepstakesStackManager = new SweepstakesStackManager();
             }
             else
             {
-                SweepstakesQueueManager sweepstakesManager = new SweepstakesQueueManager();
+                sweepstakesQueueManager = new SweepstakesQueueManager();
             }
         }
 
