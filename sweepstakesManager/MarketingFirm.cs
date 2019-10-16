@@ -22,11 +22,15 @@ namespace sweepstakesManager
             Sweepstakes sweepstakes = new Sweepstakes(UserInterface.input);
             if (stack)
             {
-
+                sweepstakesStackManager.InsertSweepstakes(sweepstakes);
+                Console.Clear();
+                UserInterface.MainMenu(this);
             }
             else
             {
-
+                sweepstakesQueueManager.InsertSweepstakes(sweepstakes);
+                Console.Clear();
+                UserInterface.MainMenu(this);
             }
         }
 
