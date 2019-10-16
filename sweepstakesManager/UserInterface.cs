@@ -36,7 +36,7 @@ namespace sweepstakesManager
                     break;
             }
         }
-        public static void AskForSweepstakesName()
+        public static void GetSweepstakesName()
         {
             Console.Clear();
             Console.WriteLine("What would you like for the name of the sweepstakes?");
@@ -50,25 +50,22 @@ namespace sweepstakesManager
             input = Console.ReadLine();
             firstTime = false;
         }
-        public Contestant GetFirstName(Contestant contestant)
+        public static void GetFirstName()
         {
             Console.Clear();
             Console.WriteLine("Contestant Information");
             Console.WriteLine("First name: ");
-            contestant.firstName = Console.ReadLine();
-            return contestant;
+            input = Console.ReadLine();
         }
-        public Contestant GetLastName(Contestant contestant)
+        public static void GetLastName()
         {
             Console.WriteLine("Last name: ");
-            contestant.lastName = Console.ReadLine();
-            return contestant;
+            input = Console.ReadLine();
         }
-        public Contestant GetEmail(Contestant contestant)
+        public static void GetEmail()
         {
             Console.WriteLine("Email: ");
-            contestant.email = Console.ReadLine();
-            return contestant;
+            input = Console.ReadLine();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace sweepstakesManager
     public class MarketingFirm
     {
         public bool stack;
-        ISweepstakesManager sweepstakesManager;
+        public ISweepstakesManager sweepstakesManager;
         SweepstakesManagerFactory sweepstakesManagerFactory;
 
         public MarketingFirm()
@@ -18,7 +18,7 @@ namespace sweepstakesManager
         }
         void CreateNewSweepstakes()
         {
-            UserInterface.AskForSweepstakesName();
+            UserInterface.GetSweepstakesName();
             Sweepstakes sweepstakes = new Sweepstakes(UserInterface.input);
             if (stack)
             {

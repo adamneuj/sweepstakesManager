@@ -8,7 +8,8 @@ namespace sweepstakesManager
 {
     public class Sweepstakes
     {
-        string name;
+        public string name;
+        Contestant winner;
         Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
 
         public Sweepstakes(string name)
@@ -18,14 +19,21 @@ namespace sweepstakesManager
 
         void RegisterContestant(Contestant contestant)
         {
-            //TODO: build out function for registering each contestant to the sweepstakes
+            UserInterface.GetFirstName();
+            contestant.firstName = UserInterface.input;
+            UserInterface.GetLastName();
+            contestant.lastName = UserInterface.input;
+            UserInterface.GetEmail();
+            contestant.email = UserInterface.input;
+            contestant.registrationNumber = contestants.Count + 1;
+            contestants.Add(contestant.registrationNumber, contestant);
         }
 
-        //Contestant PickWinner()
-        //{
-        //    int winner = RandomNumber.GetRandomNumber(1, contestants.Count);
-        //    //TO DO: find winner;
-        //}
+        Contestant PickWinner()
+        {
+            int winner = RandomNumber.GetRandomNumber(1, contestants.Count);
+            //TO DO: find winner;
+        }
         void PrintContestantInfo(Contestant contestant)
         {
             //TODO: functionality to print contestant info.  IE Name, Email, and registration number.
