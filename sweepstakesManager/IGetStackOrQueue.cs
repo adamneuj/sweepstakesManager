@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace sweepstakesManager
 {
-    public interface ISweepstakesManager
+    public interface IGetStackOrQueue
     {
-        void InsertSweepstakes(Sweepstakes sweepstakes);
-        Sweepstakes GetSweepstakes();
+        ISweepstakesManager GetStackOrQueue(MarketingFirm firm);
     }
 }

@@ -20,7 +20,7 @@ namespace sweepstakesManager
             switch (input)
             {
                 case "1":
-                    firm.AddToStackOrQueue();
+                    // TODO: build out create new sweepstakes
                     break;
                 case "2":
                     // TODO: find sweepstakes for marketing firm
