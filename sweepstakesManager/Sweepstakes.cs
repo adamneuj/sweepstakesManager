@@ -37,7 +37,22 @@ namespace sweepstakesManager
         }
         void PrintContestantInfo(Contestant contestant)
         {
-            //TODO: functionality to print contestant info.  IE Name, Email, and registration number.
+            Console.Clear();
+            Console.WriteLine(this.name + "WINNER");
+            Console.WriteLine("Registration Number: " + contestant.registrationNumber);
+            Console.WriteLine("Name: " + contestant.firstName + " " + contestant.lastName);
+            Console.WriteLine("Email: " + contestant.email);
+        }
+
+        public void Register()
+        {
+            Contestant contestant = new Contestant();
+            RegisterContestant(contestant);
+        }
+        public void ChooseAndPrintWinner()
+        {
+            PickWinner();
+            PrintContestantInfo(winningContestant);
         }
     }
 }

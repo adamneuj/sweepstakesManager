@@ -18,7 +18,7 @@ namespace sweepstakesManager
                 case "2": // QUEUE
                     return new SweepstakesQueueManager();
                 default:
-                    throw new ApplicationException(string.Format("Not a valid item to purchase"));
+                    throw new ApplicationException(string.Format("Not a valid input."));
             }
         }
     }
